@@ -11,6 +11,7 @@
             padding: 20px;
             background-color: #f0f8ff;
         }
+        
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -37,12 +38,14 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background-color: rgba(255,255,255,0.5);
+            background-color: rgba(255, 255, 255, 0.53);
+            border: 1px solid rgba(0, 0, 0, 0.5);
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         .plant-part:hover {
-            background-color: rgba(255,255,255,0.8);
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
         }
         .info-box {
             margin-top: 10px;
@@ -55,6 +58,7 @@
     <div class="gallery" id="plant-gallery"></div>
 
     <script>
+        // The rest of the JavaScript code remains unchanged
         const plants = [
             {
                 name: "Chamomile",
@@ -81,6 +85,23 @@
                     { name: "Leaves", top: 50, left: 150, info: "Used for teas, flavoring, and to aid digestion." },
                     { name: "Stem", top: 200, left: 140, info: "Can be used in teas or as a garnish." },
                     { name: "Root", top: 270, left: 100, info: "Sometimes used medicinally or to control plant spread." }
+                ]
+            },
+            {
+                name: "Tulasi",
+                image: "tulasi.webp",
+                parts: [
+                    { name: "Leaves", top: 110, left: 110, info: "The primary use of Tulasi leaves is to boost immunity. They are rich in antioxidants and possess antibacterial, antiviral, and antifungal properties, helping to prevent and treat common infections such as colds, flu, and respiratory issues like asthma and bronchitis." },
+                    { name: "Stem", top: 260, left: 140, info: "The main medicinal use of the Tulasi stem is to reduce fever. Decoctions made from the stem are commonly used in traditional medicine to treat fevers and fever-related conditions, providing relief from both mild and chronic fevers." },
+                ]
+            },
+            {
+                name: "Ondelaga",
+                image: "Ondelaga.webp",
+                parts: [
+                    { name: "Leaves", top: 50, left: 110, info: "Ondelaga leaves are primarily used to enhance cognitive function, improving memory and concentration while reducing stress and anxiety. They also have anti-inflammatory properties that help in treating skin conditions and promoting overall mental clarity." },
+                    { name: "Stem", top: 150, left: 170, info: "The stem is mainly used for accelerating wound healing, thanks to its anti-inflammatory and antibacterial effects. It supports faster recovery from cuts, burns, and other skin injuries." },
+                    { name: "Root", top: 190, left: 190, info: " Ondelaga root is known for promoting digestive health, aiding in digestion, and alleviating gastrointestinal issues. It also supports liver health and detoxification processes." }
                 ]
             }
         ];
