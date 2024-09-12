@@ -3,150 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Herbal Plants Gallery</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f8ff;
-        }
-        
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .plant-container {
-            width: 300px;
-            background-color: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .plant-image {
-            width: 100%;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            border-radius: 5px;
-        }
-        .plant-part {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.53);
-            border: 1px solid rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .plant-part:hover {
-            background-color: rgba(255, 255, 255, 0.8);
-            transform: scale(1.1);
-        }
-        .info-box {
-            margin-top: 10px;
-            min-height: 100px;
-        }
-    </style>
+    <title>Herbal Garden</title>
+    <link rel="stylesheet" href="main-styles.css">
 </head>
 <body>
-    <h1>Interactive Herbal Plants Gallery</h1>
-    <div class="gallery" id="plant-gallery"></div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">HERBAL GALLERY</div>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="login.html">Add Plant</a></li>
+                    <li>
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Search herbs...">
+                            <button id="search-button">Search</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <h1>Medicinal Herbs Gallery</h1>
 
-    <script>
-        // The rest of the JavaScript code remains unchanged
-        const plants = [
-            {
-                name: "Chamomile",
-                image: "chamomile.jpg",
-                parts: [
-                    { name: "Flower", top: 30, left: 150, info: "Used for teas to aid sleep and digestion." },
-                    { name: "Stem", top: 240, left: 140, info: "Can be included in teas for a milder flavor." },
-                    { name: "Leaves", top: 100, left: 100, info: "Used in salads or teas, offering a gentle apple-like flavor." }
-                ]
-            },
-            {
-                name: "Lavender",
-                image: "lavender.jpg",
-                parts: [
-                    { name: "Flower", top: 130, left: 30, info: "Used in aromatherapy and for relaxation." },
-                    { name: "Stem", top: 210, left: 200, info: "Can be used in crafts or as kindling." },
-                    { name: "Leaves", top: 100, left: 140, info: "Can be used in cooking or to repel insects." }
-                ]
-            },
-            {
-                name: "Peppermint",
-                image: "peppermint.webp",
-                parts: [
-                    { name: "Leaves", top: 50, left: 150, info: "Used for teas, flavoring, and to aid digestion." },
-                    { name: "Stem", top: 200, left: 140, info: "Can be used in teas or as a garnish." },
-                    { name: "Root", top: 270, left: 100, info: "Sometimes used medicinally or to control plant spread." }
-                ]
-            },
-            {
-                name: "Tulasi",
-                image: "tulasi.webp",
-                parts: [
-                    { name: "Leaves", top: 110, left: 110, info: "The primary use of Tulasi leaves is to boost immunity. They are rich in antioxidants and possess antibacterial, antiviral, and antifungal properties, helping to prevent and treat common infections such as colds, flu, and respiratory issues like asthma and bronchitis." },
-                    { name: "Stem", top: 260, left: 140, info: "The main medicinal use of the Tulasi stem is to reduce fever. Decoctions made from the stem are commonly used in traditional medicine to treat fevers and fever-related conditions, providing relief from both mild and chronic fevers." },
-                ]
-            },
-            {
-                name: "Ondelaga",
-                image: "Ondelaga.webp",
-                parts: [
-                    { name: "Leaves", top: 50, left: 110, info: "Ondelaga leaves are primarily used to enhance cognitive function, improving memory and concentration while reducing stress and anxiety. They also have anti-inflammatory properties that help in treating skin conditions and promoting overall mental clarity." },
-                    { name: "Stem", top: 150, left: 170, info: "The stem is mainly used for accelerating wound healing, thanks to its anti-inflammatory and antibacterial effects. It supports faster recovery from cuts, burns, and other skin injuries." },
-                    { name: "Root", top: 190, left: 190, info: " Ondelaga root is known for promoting digestive health, aiding in digestion, and alleviating gastrointestinal issues. It also supports liver health and detoxification processes." }
-                ]
-            }
-        ];
-
-        function createPlantElement(plant) {
-            const container = document.createElement('div');
-            container.className = 'plant-container';
-            
-            const title = document.createElement('h2');
-            title.textContent = plant.name;
-            container.appendChild(title);
-
-            const imageContainer = document.createElement('div');
-            imageContainer.className = 'plant-image';
-            imageContainer.style.backgroundImage = `url(${plant.image})`;
-
-            plant.parts.forEach(part => {
-                const partElement = document.createElement('div');
-                partElement.className = 'plant-part';
-                partElement.style.top = `${part.top}px`;
-                partElement.style.left = `${part.left}px`;
-                partElement.title = part.name;
-                partElement.onclick = () => showInfo(container, part.name, part.info);
-                imageContainer.appendChild(partElement);
-            });
-
-            container.appendChild(imageContainer);
-
-            const infoBox = document.createElement('div');
-            infoBox.className = 'info-box';
-            infoBox.textContent = 'Click on a part of the plant to learn about its uses.';
-            container.appendChild(infoBox);
-
-            return container;
-        }
-
-        function showInfo(container, partName, info) {
-            const infoBox = container.querySelector('.info-box');
-            infoBox.innerHTML = `<strong>${partName}:</strong> ${info}`;
-        }
-
-        const gallery = document.getElementById('plant-gallery');
-        plants.forEach(plant => {
-            gallery.appendChild(createPlantElement(plant));
-        });
-    </script>
+        <section id="plant-list">
+            <!-- Plant list will be populated here -->
+        </section>
+    </main>
+    <script src="app.js"></script>
 </body>
 </html>

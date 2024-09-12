@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Garden</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100%;
+            color: white;
+            overflow: hidden;
+        }
+        body {
+            background-image: url('4.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .page-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end!important;
+            margin-left: 0 auto;
+        }
+        .header {
+            background-color:#316d33;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .search-input {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #2e7d32;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            width: 250px;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            width: 50%; /* Set content width to 50% */
+            margin-left: 25%; /* Adjust margin-left to center or position the content */
+        }
+        .section {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: left; /* Keep text aligned to the left */
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .btn {
+            background-color: rgba(76, 175, 80, 0.8);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            background-color: rgba(69, 160, 73, 0.9);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="logo">HERBAL GARDEN</div>
+        <!-- <button href="mailto:kartikgopal01@gmail.com">contact</button> -->
+
+    </div>
+    
+    <div class="page-container">
+        <div class="content">
+            <div class="section">
+                <h2>Buy The Herbs You Want</h2>
+                <p>Explore our wide selection of premium, organically grown herbs. From culinary delights to medicinal wonders, find the perfect herbs for your needs.</p>
+                <button class="btn">SHOP NOW</button>
+            </div>
+            <div class="section">
+                <h2>Medicinal Herbs Gallery</h2>
+                <p>Discover the healing power of nature. Our medicinal herbs gallery showcases a variety of plants known for their therapeutic properties.</p>
+                <a href="index.html"><button class="btn">EXPLORE</button></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

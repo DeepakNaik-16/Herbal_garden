@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Garden</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap');
+        body {
+            /* ... other styles ... */
+            background-image: url('1.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f8f0; /* Light green background */
+        }
+        .container {
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 15%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            color: #2c5e2e;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        p {
+            font-size: 32px;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        .btn {
+            font-size: 24px;
+            color: white;
+            background-color: #4CAF50;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HERBAL GARDEN</h1>
+        <p>Explore the world of herbs</p>
+        <a href="frontpage.html" class="btn">GET STARTED</a>
+    </div>
+</body>
+</html>

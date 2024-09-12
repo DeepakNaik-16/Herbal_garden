@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Medicinal Plant - Herbal Garden Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+    <nav>
+        <div class="logo">HERBAL GALLERY</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+
+        </ul>
+    </nav>
+</div>
+</header>
+
+    <main class="container">
+        <h1>Add Medicinal Plant</h1>
+        <form action="add_plant.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="name">Plant Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="image">Plant Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <div>
+                <label for="properties">Medicinal Properties:</label>
+                <textarea id="properties" name="properties" rows="4" required></textarea>
+            </div>
+            <button type="submit">Add Plant</button>
+        </form>
+    </main>
+</body>
+</html>

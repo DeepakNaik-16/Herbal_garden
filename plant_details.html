@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Garden - Plant Details</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #e8f5e9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #4caf50;
+            color: #ffffff;
+            
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.1);
+            border-radius: 10px;
+        }
+        
+        #plant-name {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 0.5rem;
+        }
+        
+        #plant-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        #plant-properties {
+            background-color: #f1f8e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #4caf50;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            #plant-name {
+                font-size: 1.5rem;
+            }
+            
+            #plant-image {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Herbal Gallery</h1>
+    </header>
+    <div class="container">
+        <h1 id="plant-name">Plant Name</h1>
+        <img id="plant-image" src="" alt="Plant Image">
+        <p id="plant-properties">Medicinal Properties</p>
+    </div>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const plantId = urlParams.get('id');
+        
+        fetch(`plant_details.php?id=${plantId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('plant-name').textContent = data.name;
+                document.getElementById('plant-image').src = data.image;
+                document.getElementById('plant-properties').textContent = data.properties;
+            });
+    </script>
+</body>
+</html>
